@@ -1,0 +1,22 @@
+-------- redis.com --------
+email    : cloud@yavuzsengoz.com
+password : A4gi7MZFj$-fhga
+
+-------- rbook.cloud --------
+connection-url:
+redis://default:y4nzOUzOvfbc9IZPPlQ4R8DaGcH7SOYO@redis-14446.c256.us-east-1-2.ec2.cloud.redislabs.com:14446
+
+-------- redis (docker)(local) --------
+Host : localhost
+Port: 6379
+Username: default
+Password: y4nzOUzOvfbc9IZPPlQ4R8DaGcH7SOYO
+
+-------- Documentations ------------
+https://redis.io/commands/
+https://javadoc.io/doc/redis.clients/jedis/latest/index.html
+
+
+npm install -D @sveltejs/adapter-auto @sveltejs/kit autoprefixer postcss prettier prettier-plugin-svelte svelte svelte-check svelte-preprocess tailwindcss tslib typescript
+
+npm install @faker-js/faker @sveltejs/adapter-node @tailwindcss/typography @types/chart.js @types/cookie @types/ioredis @types/keygrip @types/luxon axios boxen chart.js chartjs-adapter-luxon classnames cookie default-shell dotenv ioredis keygrip lodash luxon material-icons nodemon pm2 redis redis-cli ts-node ts-node-dev
