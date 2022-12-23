@@ -20,7 +20,7 @@ export const useSession: Handle = async ({ event, resolve }) => {
 	if (!keys.verify(sessionId, sig)) {
 		session = await createSession();
 	} else {
-		session = (await getSession(sessionId)) || { id: '', userId: '', username: '' };
+		session = (await getSession(sessionId)) || { id: '1' };
 	}
 
 	event.locals.session = session;
@@ -41,8 +41,7 @@ const createSession = async (): Promise<Session> => {
 
 	const session = {
 		id,
-		userId: '',
-		username: ''
+		userId: null
 	};
 
 	await saveSession(session);
