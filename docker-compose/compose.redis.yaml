@@ -11,7 +11,8 @@ services:
   # The Redis database container.
   redis:
     # https://hub.docker.com/_/redis
-    image: redis:alpine
+    # image: redis:alpine
+    image: redis/redis-stack-server:latest
     command: redis-server --requirepass y4nzOUzOvfbc9IZPPlQ4R8DaGcH7SOYO
     container_name: "${REDIS_CONTAINER_NAME:-redis}"
     healthcheck:
@@ -36,4 +37,4 @@ networks:
 volumes:
   redis_data:
     driver: "local"
-    name: "${REDIS_CONTAINER_NAME:-redis}_data"
+    name: "${REDIS_CONTAINER_NAME:-redis}_stack_server_data"
