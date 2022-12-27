@@ -1,4 +1,7 @@
 -------- redis.com --------
+
+https://hub.docker.com/r/redis/redis-stack-server
+
 email    : cloud@yavuzsengoz.com
 password : A4gi7MZFj$-fhga
 
@@ -20,3 +23,25 @@ https://javadoc.io/doc/redis.clients/jedis/latest/index.html
 npm install -D @sveltejs/adapter-auto @sveltejs/kit autoprefixer postcss prettier prettier-plugin-svelte svelte svelte-check svelte-preprocess tailwindcss tslib typescript
 
 npm install @faker-js/faker @sveltejs/adapter-node @tailwindcss/typography @types/chart.js @types/cookie @types/ioredis @types/keygrip @types/luxon axios boxen chart.js chartjs-adapter-luxon classnames cookie default-shell dotenv ioredis keygrip lodash luxon material-icons nodemon pm2 redis redis-cli ts-node ts-node-dev
+
+----------------------------------------------------
+Example:
+
+redis 127.0.0.1:6379> AUTH PASSWORD
+(error) ERR Client sent AUTH, but no password is set
+redis 127.0.0.1:6379> CONFIG SET requirepass "mypass"
+OK
+redis 127.0.0.1:6379> AUTH mypass
+Ok
+
+----------------------------------------------------
+
+HSET cars#a1 name "fast car" color red year 1950;
+HSET cars#b1 name "car" color red year 1960;
+HSET cars#c1 name "old car" color blue year 1970;
+HSET cars#d1 name "new car" color blue year 1990;
+
+FT.CREATE idx:cars ON HASH PREFIX 1 cars# SCHEMA name TEXT year NUMERIC color TAG;
+FT.SEARCH idx:cars '@name:(fast car)';
+FT.SEARCH idx:cars '@color:{blue}';
+FT.SEARCH idx:cars '@year:[1960, 19700]';
